@@ -1,4 +1,4 @@
-name: Deploy Lambda API
+name: Deploy Lambda
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
       # 3. Zip Lambda function
       - name: Package Lambda
         run: |
-          cd backend
+          cd lambda
           zip -r lambda.zip visitor_counter.py
 
       # 4. Deploy Lambda
