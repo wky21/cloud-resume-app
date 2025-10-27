@@ -23,6 +23,10 @@
       border-bottom: 2px solid #e5e7eb;
       padding-bottom: 10px;
       margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
     }
     header h1 {
       margin: 0;
@@ -31,6 +35,15 @@
     header .contact {
       font-size: 14px;
       color: #555;
+    }
+    header .links {
+      margin-top: 6px;
+    }
+    header .links a {
+      color: #0b74de;
+      text-decoration: none;
+      margin-right: 8px;
+      font-size: 13px;
     }
     h2 {
       font-size: 18px;
@@ -67,18 +80,49 @@
       border-radius: 12px;
       font-size: 13px;
     }
+    /* Visitor counter styling */
+    .visitor-counter {
+      margin-left: auto;
+      text-align: right;
+      font-size: 14px;
+      color: #333;
+    }
+    .visitor-counter h2 {
+      font-size: 16px;
+      color: #0b74de;
+      margin: 0;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .visitor-counter {
+        text-align: left;
+        margin-left: 0;
+        margin-top: 8px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Wilson Wong</h1>
-      <div class="contact">
-        Los Angeles, CA · (646) 255-7862 · <a href="mailto:wilsonwong.wky@gmail.com">wilsonwong.wky@gmail.com</a>
-        resume website github:
-        <a href="https://github.com/wky21/cloud-resume" target="_blank" rel="noopener noreferrer">
-          https://github.com/wky21/cloud-resume
-        </a>
+      <div>
+        <h1>Wilson Wong</h1>
+        <div class="contact">
+          Los Angeles, CA · (646) 255-7862 · <a href="mailto:wilsonwong.wky@gmail.com">wilsonwong.wky@gmail.com</a>
+          <div class="links">
+            GitHub Cloud Resume Repositories:
+            <a href="https://github.com/wky21/cloud-resume-infra" target="_blank" rel="noopener noreferrer">cloud-resume-infra</a>
+            <a href="https://github.com/wky21/cloud-resume-app" target="_blank" rel="noopener noreferrer">cloud-resume-app</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="visitor-counter" aria-live="polite">
+        <h2>Visitor Count: <span id="count">0</span></h2>
       </div>
     </header>
 
@@ -160,11 +204,6 @@
       <p><strong>AWS Certified Solutions Architect – Associate</strong> (Valid through 2025)</p>
     </section>
 
-    <!-- Visitor Counter -->
-    <section>
-      <h2> </h2>
-      <p>Visitor Count: <span id="count">0</span></p>
-    </section>
   </div>
 
   <!-- JavaScript for Visitor Counter -->
